@@ -2,7 +2,7 @@
 
 This example has been referenced and rebuilt from [Aschmelyun/docker-compose-laravel](https://github.com/aschmelyun/docker-compose-laravel).
 You can use this repository to deploy a Laravel app on KintoHub.
-Additionally, it can be used to quickly setup Laravel locally on your machine.a
+Additionally, it can be used to quickly setup Laravel locally on your machine.
 
 ## Directory Structure
 
