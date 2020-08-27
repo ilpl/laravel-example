@@ -6,6 +6,6 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-di
 WORKDIR /var/www/html
 
 COPY ./laravel .
-RUN chown -R www-data:www-data /var/www
 RUN composer update --no-scripts
+RUN chown -R www-data:www-data /var/www
 
