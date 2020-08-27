@@ -29,4 +29,36 @@ Begin to modify the files as you please!
 
 ## Deploying on KintoHub
 
-//TODO:
+If you do not have an account, first [signup](https://www.kintohub.com)
+This example requires a MySQL server which requires you to activate [pay-as-you-go](https://docs.kintohub.com/anatomy/billing#activate-pay-as-you-go-billing) billing on KintoHub.
+
+### Deploy a MySQL Server
+
+1. Click **Create Service** at the top right of your environment
+2. Click **From Catalog** and then select **MySQL**
+3. Fill or generate your `username`, `password` and `root password` for your database
+4. Click **Deploy** At the top right.
+
+Once complete, go to the **Access** tab and copy the **Root User Connection String**
+
+This will take several minutes to complete
+
+### Deploy Laravel PHP App
+
+1. Click **Create Service** at the top right of your environment
+2. Choose **Backend API** from the list
+3. Change the **Dockerfile Name** to `laravel.dockerfile`
+4. Change the **Port** to `9000`
+5. Open the **Environment Variables** tab and enter the key `DATABASE_URL` and paste the connection string value you copied in the **Deploy a MySQL Server Step**
+
+### Deploy Nginx Php Proxy
+
+We need to deploy web host proxy to serve the php app on KintoHub.
+
+1. Click **Create Service** at the top right of your environment
+2. Choose **Web App** from the list
+3. Change the **Dockerfile Name** to `nginx.dockerfile`
+4. Change the **Port** to `80`
+5. Click **Deploy** at the top right
+
+When complete, open the **Access** tab and open the external URL to see your Laravel app!
