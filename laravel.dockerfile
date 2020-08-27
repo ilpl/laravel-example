@@ -8,6 +8,3 @@ WORKDIR /var/www/html
 COPY ./laravel .
 RUN composer update --no-scripts
 RUN chown -R www-data:www-data /var/www
-
-CMD tail -f /var/www/html/storage/logs/*.log &
-CMD php-fpm

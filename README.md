@@ -50,6 +50,23 @@ This will take several minutes to complete
 3. Change the **Dockerfile Name** to `laravel.dockerfile`
 4. Change the **Port** to `9000`
 5. Open the **Environment Variables** tab and enter the key `DATABASE_URL` and paste the connection string value you copied in the **Deploy a MySQL Server Step**
+6. Additionally, paste the following into the **key** textbox:
+
+```
+APP_NAME=Laravel
+APP_ENV=dev
+APP_KEY=base64:PoStwuoIPBnH+W2znwpmQbZvCJZPdou1DedUu+3F7mI=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+```
 
 ### Deploy Nginx Php Proxy
 
@@ -59,6 +76,7 @@ We need to deploy web host proxy to serve the php app on KintoHub.
 2. Choose **Web App** from the list
 3. Change the **Dockerfile Name** to `nginx.dockerfile`
 4. Change the **Port** to `80`
-5. Click **Deploy** at the top right
+5. Open the Environment Variables tab to copy and paste the following into the **key** textbox:
+6. Click **Deploy** at the top right
 
 When complete, open the **Access** tab and open the external URL to see your Laravel app!
